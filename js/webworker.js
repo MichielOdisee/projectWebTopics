@@ -1,4 +1,4 @@
-
+//webworker
 
 onmessage = (e) => {
     if (e.data.actie === 'start') {

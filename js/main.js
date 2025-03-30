@@ -1,3 +1,5 @@
+// main.js
+
 import './webmentions.js';
 
 
@@ -47,4 +49,4 @@ toggle?.addEventListener("click", () => {
     updateDarkToggleIcon();
 });
 
-updateDarkToggleIcon(); // bij paginalaad
+updateDarkToggleIcon();

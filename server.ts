@@ -1,9 +1,10 @@
+//server.ts
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
 const WEBMENTIONS_PATH = "./webmentions.json";
 const TARGET_URL = "https://webtopics.michielvandevelde.ikdoeict.be"
 
-// 1. Hulp: webmentions ophalen
+
 async function getWebmentions(): Promise<any[]> {
     try {
         const data = await Deno.readTextFile(WEBMENTIONS_PATH);
@@ -13,14 +14,13 @@ async function getWebmentions(): Promise<any[]> {
     }
 }
 
-// 2. Hulp: webmention opslaan
+
 async function saveWebmention(newMention: any) {
     const mentions = await getWebmentions();
     mentions.push(newMention);
     await Deno.writeTextFile(WEBMENTIONS_PATH, JSON.stringify(mentions, null, 2));
 }
 
-// 3. Hulp: statische bestanden serveren
 async function serveStatic(pathname: string): Promise<Response> {
     try {
         const filePath = pathname === "/" ? "/index.html" : pathname;
@@ -55,7 +55,6 @@ async function isValidWebmention(source: string, target: string): Promise<boolea
     }
 }
 
-// 5. Server
 serve(async (req: Request): Promise<Response> => {
     const url = new URL(req.url);
     const pathname = url.pathname;
@@ -71,8 +70,7 @@ serve(async (req: Request): Promise<Response> => {
         });
     }
 
-    // ✅ API: ontvangen
-    if (req.method === "POST" && pathname === "/api/webmentions") {
+       if (req.method === "POST" && pathname === "/api/webmentions") {
         try {
             const mention = await req.json();
             const { author, content, source, target } = mention;

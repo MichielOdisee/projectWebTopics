@@ -1,6 +1,6 @@
 // generateFeed.ts
 
-const SITE_URL = "https://webtopics.michielvandevelde.ikdoeict.be";
+const SITE_URL = "https://michielodisee.github.io/projectWebTopics/";
 const OUTPUT_FILE = "./feed.xml";
 const FEED_SOURCE = "./feed.json";
 
