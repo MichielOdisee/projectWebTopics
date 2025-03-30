@@ -314,3 +314,14 @@ nav {
     }
 
 }
+#nieuws-lijst {
+    list-style: none;
+    padding: 0;
+}
+
+#nieuws-lijst li {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+

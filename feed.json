@@ -1,7 +1,7 @@
 [
   {
     "title": "Nieuwe doopactiviteit aangekondigd",
-    "link": "https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop",
+    "link": "https://michielodisee.github.io/projectWebTopics/feed.xml",
     "description": "We organiseren een doopactiviteit voor nieuwe leden op 30 oktober. Meer info op de site.",
     "author": "praeses@deparkwacht.be (Praeses)",
     "category": "Activiteiten",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Test",
-    "link": "https://michielodisee.github.io/projectWebTopics/activiteiten.html#test",
+    "link": "https://michielodisee.github.io/projectWebTopics/feed.xml",
     "description": "LAATSTE TEST.",
     "author": "temmer@deparkwacht.be (Michiel)",
     "category": "Activiteiten",

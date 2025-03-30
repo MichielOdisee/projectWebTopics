@@ -50,3 +50,32 @@ toggle?.addEventListener("click", () => {
 });
 
 updateDarkToggleIcon();
+
+async function laadNieuws() {
+    try {
+        const res = await fetch("feed.json");
+        const items = await res.json();
+
+        const lijst = document.getElementById("nieuws-lijst");
+
+        items.forEach(item => {
+            const datum = new Date(item.pubDate).toLocaleDateString("nl-BE", {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+
+            const nieuwsItem = document.createElement("li");
+            nieuwsItem.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><em>${datum} – ${item.author}</em></p>
+        <p>${item.description}</p>
+        <a href="${item.link}" class="cta">Lees meer</a>
+      `;
+            lijst.appendChild(nieuwsItem);
+        });
+
+    } catch (err) {
+        console.error("Nieuws laden mislukt:", err);
+    }
+}
+
+laadNieuws();
