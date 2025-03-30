@@ -6,8 +6,8 @@ class WebMentions extends HTMLElement {
         this.innerHTML = `<p class="mention-loading">Webmentions laden...</p>`;
 
         try {
-            const response = await fetch(apiUrl);
-            const data = await response.json();
+            const res = await fetch(apiUrl);
+            const data = await res.json();
 
             if (!data.children || data.children.length === 0) {
                 this.innerHTML = `<p class="mention-empty">Nog geen Webmentions ontvangen.</p>`;
@@ -15,31 +15,29 @@ class WebMentions extends HTMLElement {
             }
 
             const mentionsHTML = data.children.map((mention) => {
-                const authorName = mention.author?.name || "Anoniem";
-                const authorUrl = mention.author?.url || "#";
+                const author = mention.author?.name || "Anoniem";
+                const url = mention.url || "#";
                 const content = mention.content?.text || "(Geen inhoud)";
-                const mentionUrl = mention.url || authorUrl;
 
                 return `
           <div class="mention">
-            <p class="mention-content">“${content}”</p>
-            <small class="mention-author">
-              – <a href="${mentionUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
-            </small>
+            <p>“${content}”</p>
+            <small>– <a href="${url}" target="_blank" rel="noopener noreferrer">${author}</a></small>
           </div>
         `;
             }).join("");
 
             this.innerHTML = mentionsHTML;
 
-        } catch (error) {
-            console.error("Fout bij laden van webmentions:", error);
+        } catch (err) {
+            console.error("Webmentions laden mislukt:", err);
             this.innerHTML = `<p class="mention-error">Webmentions konden niet geladen worden.</p>`;
         }
     }
 }
 
-customElements.define('web-mentions', WebMentions);
+customElements.define("web-mentions", WebMentions);
+
 async function toonMentionURLs() {
     const list = document.getElementById("mention-url-list");
     if (!list) return;
@@ -56,11 +54,12 @@ async function toonMentionURLs() {
             return;
         }
 
-        const urls = [...new Set(data.children.map(m => m.url).filter(Boolean))]; // unieke URLs
+        const urls = [...new Set(data.children.map(m => m.url).filter(Boolean))];
 
         list.innerHTML = urls.map(url => `
-            <li><a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a></li>
-        `).join("");
+      <li><a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a></li>
+    `).join("");
+
     } catch (err) {
         console.error("Webmention URLs laden mislukt:", err);
         list.innerHTML = "<li>Fout bij het ophalen van Webmentions.</li>";

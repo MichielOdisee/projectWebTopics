@@ -1,20 +1,15 @@
 {
   "name": "De Parkwacht",
   "short_name": "Parkwacht",
-  "start_url": "./index.html",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2A9D8F",
+  "theme_color": "#fdd835",
   "icons": [
     {
-      "src": "images/parkopruim.png",
+      "src": "images/parkwacht_schild_officieel.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "images/parkopruim.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ]
 }
