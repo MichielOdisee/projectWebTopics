@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>De Parkwacht - Nieuws en updates</title>
-    <link>https://webtopics.michielvandevelde.ikdoeict.be</link>
+    <title>De Parkwacht – Nieuws en updates</title>
+    <link>https://michielodisee.github.io/projectWebTopics/</link>
     <description>Nieuws, updates en aankondigingen van De Parkwacht</description>
     <language>nl</language>
-    <lastBuildDate>Sun, 30 Mar 2025 10:24:58 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 30 Mar 2025 10:00:00 GMT</lastBuildDate>
 
     <item>
-      <title>Nieuw artikel over webontwikkeling</title>
-      <link>https://webtopics.michielvandevelde.ikdoeict.be</link>
-      <description>Een diepgaande blik op de nieuwste trends in webontwikkeling.</description>
-      <author>michiel@student.odisee.be (Michiel Van de Velde)</author>
-      <category>Webontwikkeling</category>
-      <pubDate>Mon, 31 Mar 2025 10:00:00 GMT</pubDate>
+      <title>Nieuwe doopactiviteit aangekondigd</title>
+      <link>https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop</link>
+      <description>We organiseren een doopactiviteit voor nieuwe leden op 30 oktober. Meer info op de site.</description>
+      <author>praeses@deparkwacht.be (Praeses)</author>
+      <category>Activiteiten</category>
+      <pubDate>Sat, 30 Mar 2025 08:00:00 GMT</pubDate>
+      <guid>https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop</guid>
     </item>
 
   </channel>

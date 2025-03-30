@@ -1,7 +1,7 @@
 {
   "name": "De Parkwacht",
   "short_name": "Parkwacht",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2A9D8F",
@@ -10,6 +10,11 @@
       "src": "images/parkopruim.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "images/parkopruim.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ]
 }
