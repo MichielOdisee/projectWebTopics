@@ -1,45 +1,36 @@
 class WebMentions extends HTMLElement {
-    connectedCallback() {
+    async connectedCallback() {
+        const targetUrl = "https://michielodisee.github.io/projectWebTopics/";
+        const apiUrl = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(targetUrl)}`;
+
         this.innerHTML = '<p>Webmentions laden...</p>';
 
-        fetch('webmentions.json')
-            .then(res => {
-                if (!res.ok) throw new Error("Kan webmentions.json niet laden");
-                return res.json();
-            })
-            .then(data => {
-                if (!Array.isArray(data)) throw new Error("Data is geen array");
+        try {
+            const res = await fetch(apiUrl);
+            const data = await res.json();
 
-                this.innerHTML = data.map(mention => `
-                    <div class="mention">
-                        <p>${mention.content}</p>
-                        <small>- ${mention.author}</small><br />
-                        <time datetime="${mention.timestamp}">${new Date(mention.timestamp).toLocaleString()}</time>
-                    </div>
-                `).join('');
-            })
-            .catch(error => {
-                console.error(error);
-                this.innerHTML = '<p>Webmentions konden niet geladen worden.</p>';
-            });
+            if (!data.children || data.children.length === 0) {
+                this.innerHTML = '<p>Nog geen Webmentions ontvangen.</p>';
+                return;
+            }
+
+            this.innerHTML = data.children.map(mention => {
+                const author = mention.author?.name || 'Anoniem';
+                const content = mention.content?.text || '(Geen inhoud)';
+                const url = mention.url || '#';
+
+                return `
+          <div class="mention">
+            <p>“${content}”</p>
+            <small>– <a href="${url}" target="_blank" rel="noopener noreferrer">${author}</a></small>
+          </div>
+        `;
+            }).join('');
+        } catch (err) {
+            console.error(err);
+            this.innerHTML = '<p>Webmentions konden niet geladen worden.</p>';
+        }
     }
 }
 
 customElements.define('web-mentions', WebMentions);
-
-const wmForm = document.getElementById("webmention-form");
-const wmStatus = document.getElementById("wm-status");
-
-wmForm?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(wmForm));
-
-    wmStatus.textContent = "Webmention wordt (lokaal) verwerkt...";
-
-    // Simuleer succesvolle post
-    setTimeout(() => {
-        wmStatus.textContent = "Je webmention werd lokaal opgeslagen (niet echt verzonden).";
-        wmForm.reset();
-    }, 1000);
-
-});
