@@ -13,7 +13,9 @@ interface FeedItem {
 
 function toRSSDate(date: string): string {
     const d = new Date(date);
-    return d.toUTCString(); // "Sun, 30 Mar 2025 08:00:00 GMT"
+    const rssDate = d.toUTCString();
+    console.log("📅 pubDate input:", date, "→", rssDate);
+    return rssDate;
 }
 
 function escapeXML(str: string): string {
@@ -44,11 +46,10 @@ async function generateRSS() {
     </item>`).join("\n");
 
         const rss = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
     <title>De Parkwacht - Nieuws en updates</title>
     <link>${SITE_URL}</link>
-    <atom:link href="${SITE_URL}feed.xml" rel="self" type="application/rss+xml" />
     <description>Nieuws, updates en aankondigingen van De Parkwacht</description>
     <language>nl</language>
     <lastBuildDate>${buildDate}</lastBuildDate>
