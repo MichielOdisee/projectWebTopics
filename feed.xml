@@ -9,22 +9,22 @@
     
     <item>
       <title>Nieuwe doopactiviteit aangekondigd</title>
-      <link>https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop</link>
+      <link>https://michielodisee.github.io/projectWebTopics/</link>
       <description>We organiseren een doopactiviteit voor nieuwe leden op 30 oktober. Meer info op de site.</description>
       <author>praeses@deparkwacht.be (Praeses)</author>
       <category>Activiteiten</category>
       <pubDate>Sun, 30 Mar 2025 08:00:00 GMT</pubDate>
-      <guid>https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop</guid>
+      <guid>https://michielodisee.github.io/projectWebTopics/</guid>
     </item>
 
     <item>
       <title>Test</title>
-      <link>https://michielodisee.github.io/projectWebTopics/activiteiten.html#test</link>
+      <link>https://michielodisee.github.io/projectWebTopics/</link>
       <description>LAATSTE TEST.</description>
       <author>temmer@deparkwacht.be (Michiel)</author>
       <category>Activiteiten</category>
       <pubDate>Sun, 30 Mar 2025 08:40:00 GMT</pubDate>
-      <guid>https://michielodisee.github.io/projectWebTopics/activiteiten.html#test</guid>
+      <guid>https://michielodisee.github.io/projectWebTopics/</guid>
     </item>
   </channel>
 </rss>
