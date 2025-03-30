@@ -261,5 +261,55 @@ nav {
     .footer-signature {
         margin-top: 1.5rem;
     }
+    .webmention-footer {
+        text-align: center;
+        background: var(--card-bg);
+        color: var(--text);
+        padding: 2rem;
+        margin-top: 3rem;
+        border-radius: 1rem;
+    }
+
+    .webmention-footer form {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .webmention-footer input {
+        max-width: 20rem;
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .webmention-footer button {
+        background: var(--accent-color);
+        border: none;
+        padding: 0.75rem 2rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+    .webmention-footer button:hover {
+        filter: brightness(0.9);
+    }
+
+    .webmention-footer a {
+        color: var(--text);
+        text-decoration: underline;
+    }
+
+    .webmention-footer .copyright {
+        margin-top: 2rem;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--text);
+    }
 
 }
