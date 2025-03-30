@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>De Parkwacht - Nieuws en updates</title>
+    <title>De Parkwacht – Nieuws en updates</title>
     <link>https://michielodisee.github.io/projectWebTopics/</link>
-    <atom:link href="https://michielodisee.github.io/projectWebTopics/feed.xml" rel="self" type="application/rss+xml" />
     <description>Nieuws, updates en aankondigingen van De Parkwacht</description>
     <language>nl</language>
-    <lastBuildDate>Sun, 30 Mar 2025 18:23:00 GMT</lastBuildDate>
-    
+    <lastBuildDate>Sun, 30 Mar 2025 10:00:00 GMT</lastBuildDate>
+
     <item>
       <title>Nieuwe doopactiviteit aangekondigd</title>
       <link>https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop</link>
@@ -18,14 +17,5 @@
       <guid>https://michielodisee.github.io/projectWebTopics/activiteiten.html#doop</guid>
     </item>
 
-    <item>
-      <title>Test</title>
-      <link>https://michielodisee.github.io/projectWebTopics/activiteiten.html#test</link>
-      <description>LAATSTE TEST.</description>
-      <author>temmer@deparkwacht.be (Michiel)</author>
-      <category>Activiteiten</category>
-      <pubDate>Sun, 30 Mar 2025 08:00:00 GMT</pubDate>
-      <guid>https://michielodisee.github.io/projectWebTopics/activiteiten.html#test</guid>
-    </item>
   </channel>
 </rss>
