@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="me" href="https://github.com/michielodisee" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="De Parkwacht is een Gentse studentenvereniging die zich inzet voor een leuke en inclusieve studentenervaring." />
+    <meta name="description" content="De Parkwacht is een studentenvereniging in Gent die focust op vriendschap, natuur én een respectvolle studentendoop." />
     <title>De Parkwacht</title>
 
     <link rel="alternate" type="application/rss+xml" title="RSS - De Parkwacht" href="feed.xml" />
-
-
     <link rel="webmention" href="https://webmention.io/michielodisee.github.io_projectwebtopics_/webmention" />
     <link rel="pingback" href="https://webmention.io/michielodisee.github.io_projectwebtopics_/xmlrpc" />
 
@@ -19,6 +17,21 @@
 
     <script type="module" src="js/main.js" defer></script>
     <script type="module" src="js/webmentions.js" defer></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "De Parkwacht",
+            "url": "https://michielodisee.github.io/projectWebTopics/",
+            "logo": "https://michielodisee.github.io/projectWebTopics/images/parkwacht_schild_officieel.png",
+            "description": "Gentse studentenvereniging met aandacht voor vriendschap, natuur en doopplezier.",
+            "sameAs": [
+                "https://github.com/michielodisee"
+            ]
+        }
+    </script>
 </head>
 <body>
 
@@ -27,7 +40,7 @@
 <header>
     <div class="nav-container">
         <a href="/index.html" class="logo" aria-label="De Parkwacht homepage">
-            <img src="images/parkwacht_schild_officieel.png" alt="Logo De Parkwacht" class="logo-img" />
+            <img src="images/parkwacht_schild_officieel.png" alt="Logo De Parkwacht" class="logo-img" loading="lazy" width="80" height="80" />
             <span class="logo-text">De Parkwacht</span>
         </a>
 
@@ -47,12 +60,12 @@
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Welkom bij <span>De Parkwacht</span></h1>
-            <p>Een studentenvereniging die Gent mooier maakt. Aangename studentendoop? Bloedinzamelingen? Opruimacties? Bij ons doe je het met vrienden, plezier en een goed glas bier!</p>
+            <h1>Welkom bij De Parkwacht – jouw studentenvereniging in Gent</h1>
+            <p>Een studentenvereniging met een doop die wél leuk is? In Gent kan het. Bij ons leer je vrienden maken op kot en vier je het leven met respect.</p>
             <a href="#lid-worden" class="cta">Word lid</a>
         </div>
         <div class="hero-img">
-            <img src="images/parkopruim.jpg" alt="Parkwacht actie" />
+            <img src="images/parkopruim.jpg" alt="Parkwacht actie" width="600" height="400" loading="lazy" />
         </div>
     </section>
 
@@ -60,7 +73,7 @@
         <h2>Beste potentiële feut (toekomstige schacht),</h2>
         <p>We zijn dolenthousiast dat je overweegt om je te laten dopen bij ons! Het verenigingsleven is je waarschijnlijk nog onbekend en dat kan beangstigend zijn. Toch is dit nergens voor nodig.</p>
         <p>Binnen een studentenvereniging leer je heel veel nieuwe mensen kennen die vrienden voor het leven worden. De eerste en belangrijkste introductie hiervoor is natuurlijk de doop. Dit klinkt vreemd en misschien een beetje eng, maar geloof ons als we zeggen dat dit allerminst het geval is.</p>
-        <p>We bieden deze site aan om je alle informatie te geven die je kan nodig hebben.
+        <p>We bieden deze site aan om je alle informatie te geven die je kan nodig hebben.</p>
         <p>Als je vragen hebt en hier geen antwoord op vindt op deze site, twijfel dan niet om <strong>een van onze praesidiumleden</strong> te contacteren. Zij helpen je graag zodanig dat je met een gerust hart kan kiezen voor onze vereniging.</p>
         <p>Aut bibat, aut abeat</p>
     </section>
@@ -71,16 +84,14 @@
             <p>De Parkwacht is een erkende interfacultaire studentenvereniging met een hart voor de natuur. Dit houdt dus in dat we nergens aan verbonden zijn en iedereen dan ook welkom is!</p>
             <p>Het maakt dus niet uit wat je studeert, of wat je interesses zijn. Zolang dat je leeft voor de waarden van vriendschap en respect, hebben wij je er graag bij.</p>
         </div>
-        <img src="images/doop.jpg" alt="foto van studenten die aan het lachen zijn" class="logo-inline" />
+        <img src="images/doop.jpg" alt="foto van studenten tijdens doopactiviteit" class="logo-inline" width="600" height="400" loading="lazy" />
     </section>
 
-    </section>
+
     <section id="nieuws" class="card">
         <h2>Nieuws en updates</h2>
         <ul id="nieuws-lijst"></ul>
     </section>
-
-
 
 </main>
 
@@ -103,12 +114,10 @@
             <input type="url" id="source-url" name="source" placeholder="https://..." required />
             <button type="submit">Verzend!</button>
         </form>
-        <p>
-            📡 <a href="feed.xml" target="_blank">RSS-feed</a> – Blijf op de hoogte!
-        </p>
+
+        <p>📡 <a href="feed.xml" target="_blank">RSS-feed</a> – Blijf op de hoogte!</p>
 
         <p class="copyright">&copy; Michiel Van de Velde – 2025</p>
-
     </section>
 </footer>
 
