@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="De Parkwacht is een Gentse studentenvereniging die zich inzet voor een leuke en inclusieve studentenervaring." />
+    <title>De Parkwacht</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS - De Parkwacht" href="/feed.xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/webmentions.js" defer></script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Spring naar inhoud</a>
+
+<header>
+    <div class="nav-container">
+        <a href="/index.html" class="logo" aria-label="De Parkwacht homepage">
+            <img src="images/parkwacht_schild_officieel.png" alt="Logo De Parkwacht" class="logo-img" />
+            <span class="logo-text">De Parkwacht</span>
+        </a>
+
+        <nav>
+            <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-menu">☰ Menu</button>
+            <ul id="main-menu" class="nav-links">
+                <li><a href="#introductie">Introductie</a></li>
+                <li><a href="#wat-is-de-parkwacht">Wat is De Parkwacht</a></li>
+                <li><a href="#lid-worden">Lid worden</a></li>
+            </ul>
+            <button id="darkmode-toggle" class="dark-toggle" aria-label="Donkere modus">🌓</button>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content" role="main">
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welkom bij <span>De Parkwacht</span></h1>
+            <p>Een studentenvereniging die Gent mooier maakt. Aangename studentendoop? Bloedinzamelingen? Opruimacties? Bij ons doe je het met vrienden, plezier en een goed glas bier!</p>
+            <a href="#lid-worden" class="cta">Word lid</a>
+        </div>
+        <div class="hero-img">
+            <img src="images/parkopruim.jpg" alt="Parkwacht actie" />
+        </div>
+    </section>
+
+
+
+    <section id="introductie" class="card intro-tekst">
+        <h2>Beste potentiële feut (toekomstige schacht),</h2>
+        <p>We zijn dolenthousiast dat je overweegt om je te laten dopen bij ons! Het verenigingsleven is je waarschijnlijk nog onbekend en dat kan beangstigend zijn. Toch is dit nergens voor nodig.</p>
+        <p>Binnen een studentenvereniging leer je heel veel nieuwe mensen kennen die vrienden voor het leven worden. De eerste en belangrijkste introductie hiervoor is natuurlijk de doop. Dit klinkt vreemd en misschien een beetje eng, maar geloof ons als we zeggen dat dit allerminst het geval is.</p>
+        <p>We bieden deze site aan om je alle informatie te geven die je kan nodig hebben. Op de verschillende pagina's kan je terugvinden:</p>
+        <ul>
+            <li>Wie wij zijn en waarvoor we staan</li>
+            <li>Wat de verkoop is</li>
+            <li>Wat de doop inhoudt en waarom dit bij ons net zo leuk is</li>
+            <li>Wat we jou doorheen het jaar aanbieden</li>
+        </ul>
+        <p>Als je vragen hebt en hier geen antwoord op vindt op deze site, twijfel dan niet om <strong>een van onze praesidiumleden</strong> te contacteren. Zij helpen je graag zodanig dat je met een gerust hart kan kiezen voor onze vereniging.</p>
+        <p>Aut bibat, aut abeat</p>
+    </section>
+
+    <section id="wat-is-de-parkwacht" class="card split">
+        <div>
+            <h2>Wat is De Parkwacht?</h2>
+            <p>De Parkwacht is een erkende interfacultaire studentenvereniging met een hart voor de natuur. Dit houdt dus in dat we nergens aan verbonden zijn en iedereen dan ook welkom is!</p>
+            <p>Het maakt dus niet uit wat je studeert, of wat je interesses zijn. Zolang dat je leeft voor de waarden van vriendschap en respect, hebben wij je er graag bij.</p>
+        </div>
+        <img src="images/doop.jpg" alt="foto van studenten die aan het lachen zijn" class="logo-inline" />
+    </section>
+
+    <section id="lid-worden" class="card">
+        <h2>Word lid</h2>
+        <form>
+            <label for="naam">Naam *</label>
+            <input type="text" id="naam" required />
+
+            <label for="email">E-mailadres *</label>
+            <input type="email" id="email" required />
+
+            <button type="submit">Aanmelden</button>
+        </form>
+    </section>
+
+    <section class="card" aria-labelledby="webmention-heading">
+        <h2 id="webmention-heading">Laat een Webmention achter</h2>
+        <form id="webmention-form">
+            <label for="author">Naam *</label>
+            <input type="text" id="author" name="author" required />
+
+            <label for="content">Bericht *</label>
+            <textarea id="content" name="content" rows="4" required></textarea>
+
+            <label for="source">Jouw website (optioneel)</label>
+            <input type="url" id="source" name="source" placeholder="https://..." />
+
+            <input type="hidden" name="target" value="http://localhost:8000" />
+            <button type="submit">Verstuur Webmention</button>
+        </form>
+        <p id="wm-status" aria-live="polite"></p>
+    </section>
+
+</main>
+
+<footer>
+    <web-mentions></web-mentions>
+    <p>&copy; 2025 De Parkwacht</p>
+</footer>
+
+</body>
+</html>

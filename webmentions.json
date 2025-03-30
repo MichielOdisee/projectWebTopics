@@ -1,0 +1,30 @@
+[
+  {
+    "content": "Geweldig initiatief! Doe zo verder!",
+    "author": "Bart"
+  },
+  {
+    "content": "Fantastische vereniging, erg leuke activiteiten!",
+    "author": "Bavo"
+  },
+  {
+    "author": "Michi",
+    "content": "Dit is een test of het werkt!",
+    "timestamp": "2025-03-29T19:10:22.000Z"
+  },
+  {
+    "author": "test",
+    "content": "test",
+    "timestamp": "2025-03-29T20:48:50.044Z"
+  },
+  {
+    "author": "hi",
+    "content": "hi",
+    "timestamp": "2025-03-30T11:51:05.850Z"
+  },
+  {
+    "author": "test",
+    "content": "test",
+    "timestamp": "2025-03-30T13:56:43.801Z"
+  }
+]
