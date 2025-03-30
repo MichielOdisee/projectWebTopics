@@ -110,9 +110,20 @@
 
 </main>
 
-<footer>
-    <web-mentions></web-mentions>
-    <p>&copy; 2025 De Parkwacht</p>
+<footer class="footer-mentions">
+    <p>
+        Deze site werd al <strong id="mention-count">...</strong> keer genoemd!<br />
+        Vermeldde jij deze site ergens? Vergeet dan je <a href="https://webmention.io/send/" target="_blank" rel="noopener">Webmention</a> niet.
+    </p>
+
+    <form id="webmention-outgoing-footer" action="https://webmention.io/endpoint" method="post">
+        <label for="source-footer">Michiel, je werd vermeld op:</label>
+        <input type="url" id="source-footer" name="source" required placeholder="https://..." />
+        <input type="hidden" name="target" value="https://michielodisee.github.io/projectWebTopics/" />
+        <button type="submit">Verzend!</button>
+    </form>
+
+    <p class="footer-signature">&copy; Michiel Van de Velde - 2025</p>
 </footer>
 
 </body>

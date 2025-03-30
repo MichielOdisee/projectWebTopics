@@ -3,32 +3,38 @@ class WebMentions extends HTMLElement {
         const targetUrl = "https://michielodisee.github.io/projectWebTopics/";
         const apiUrl = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(targetUrl)}`;
 
-        this.innerHTML = '<p>Webmentions laden...</p>';
+        this.innerHTML = `<p class="mention-loading">Webmentions laden...</p>`;
 
         try {
-            const res = await fetch(apiUrl);
-            const data = await res.json();
+            const response = await fetch(apiUrl);
+            const data = await response.json();
 
             if (!data.children || data.children.length === 0) {
-                this.innerHTML = '<p>Nog geen Webmentions ontvangen.</p>';
+                this.innerHTML = `<p class="mention-empty">Nog geen Webmentions ontvangen.</p>`;
                 return;
             }
 
-            this.innerHTML = data.children.map(mention => {
-                const author = mention.author?.name || 'Anoniem';
-                const content = mention.content?.text || '(Geen inhoud)';
-                const url = mention.url || '#';
+            const mentionsHTML = data.children.map((mention) => {
+                const authorName = mention.author?.name || "Anoniem";
+                const authorUrl = mention.author?.url || "#";
+                const content = mention.content?.text || "(Geen inhoud)";
+                const mentionUrl = mention.url || authorUrl;
 
                 return `
           <div class="mention">
-            <p>“${content}”</p>
-            <small>– <a href="${url}" target="_blank" rel="noopener noreferrer">${author}</a></small>
+            <p class="mention-content">“${content}”</p>
+            <small class="mention-author">
+              – <a href="${mentionUrl}" target="_blank" rel="noopener noreferrer">${authorName}</a>
+            </small>
           </div>
         `;
-            }).join('');
-        } catch (err) {
-            console.error(err);
-            this.innerHTML = '<p>Webmentions konden niet geladen worden.</p>';
+            }).join("");
+
+            this.innerHTML = mentionsHTML;
+
+        } catch (error) {
+            console.error("Fout bij laden van webmentions:", error);
+            this.innerHTML = `<p class="mention-error">Webmentions konden niet geladen worden.</p>`;
         }
     }
 }
